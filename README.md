@@ -6,7 +6,7 @@ This project builds a **movie recommendation system** that suggests similar movi
 
 The goal of the project is to demonstrate how recommendation systems work using **content-based filtering** with movie metadata.
 
-The system analyzes movie features such as genres and descriptions to recommend movies that are similar to the one a user selects.
+The system analyzes movie features such as genres and movie information to recommend titles that are similar to the movie selected by the user.
 
 ---
 
@@ -16,30 +16,30 @@ This project uses the **MovieLens dataset**, which contains movie information an
 
 Main files used:
 
-- `movies.csv` — movie titles and genres
-- `ratings.csv` — user ratings for movies
+- `data/raw/movies.csv` — movie titles and genres
+- `data/raw/ratings.csv` — user ratings for movies
 
-The dataset is commonly used for building recommendation systems and collaborative filtering models.
+This dataset is widely used for building recommendation systems and testing recommendation algorithms.
 
 ---
 
 ## Recommendation Method
 
-The recommendation engine uses **Content-Based Filtering**.
+The recommendation engine uses **content-based filtering**.
 
 Steps used in the recommendation pipeline:
 
-1. Load movie dataset
-2. Preprocess movie metadata
-3. Convert text features into numerical vectors
+1. Load the movie dataset
+2. Preprocess movie information
+3. Convert movie features into numerical vectors
 4. Compute similarity between movies using **cosine similarity**
-5. Recommend the most similar movies to the selected movie
+5. Return the most similar movies to the selected movie
 
 ---
 
 ## Project Structure
 
-```
+```text
 movie-recommendation-system-khatantamir
 │
 ├── app
@@ -78,13 +78,13 @@ movie-recommendation-system-khatantamir
 
 Install dependencies:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
 Run the recommendation script:
 
-```
+```python
 from src.recommender import recommend
 recommend("Toy Story (1995)")
 ```
@@ -93,9 +93,7 @@ recommend("Toy Story (1995)")
 
 ## Example Output
 
-Example recommendation results:
-
-```
+```text
 Input Movie:
 Toy Story (1995)
 
