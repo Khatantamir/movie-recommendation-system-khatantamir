@@ -4,7 +4,7 @@
 
 This project builds a movie recommendation system that suggests similar movies based on user preferences.
 
-The goal of the project is to demonstrate how recommendation systems work using content-based filtering and movie similarity analysis.
+The goal of the project is to demonstrate how recommendation systems work using collaborative filtering and movie similarity analysis based on user rating correlations.
 
 A Streamlit web application is included so users can interact with the recommendation engine and instantly receive similar movie suggestions.
 
@@ -20,34 +20,40 @@ Users can enter a movie title and instantly receive recommended movies based on 
 
 ---
 
+## App Preview
+
+![Movie Recommendation App](images/app-preview.png)
+
+---
+
 ## Dataset
 
 This project uses the MovieLens dataset, which is one of the most widely used datasets for recommendation systems.
 
 Main files used:
 
-- data/raw/movies.csv — movie titles and genres  
-- data/raw/ratings.csv — user ratings for movies  
+- data/raw/movies.csv — movie titles and genres
+- data/raw/ratings.csv — user ratings for movies
 
 The dataset contains thousands of movies and user ratings that allow the recommendation model to identify relationships between movies.
 
 Data preprocessing steps include:
 
 - merging movie metadata with ratings
-- cleaning missing values
+- removing missing values
 - filtering movies with very low rating counts
 
 ---
 
 ## Recommendation Method
 
-The recommendation engine uses content-based filtering.
+The recommendation engine uses collaborative filtering based on user rating correlations.
 
 Steps used in the recommendation pipeline:
 
 1. Load movie and ratings datasets
-2. Merge datasets into a movie feature table
-3. Create a movie-user rating matrix
+2. Merge movie titles with rating data
+3. Create a user–movie rating matrix
 4. Compute similarity between movies using Pearson correlation
 5. Filter movies with enough rating counts
 6. Return the most similar movies to the selected movie
@@ -67,7 +73,7 @@ Example output:
 Input Movie  
 Toy Story (1995)
 
-Recommended Movies  
+Recommended Movies
 
 Incredibles, The (2004)  
 Finding Nemo (2003)  
@@ -79,7 +85,7 @@ Mrs. Doubtfire (1993)
 
 ## Visualization
 
-Exploratory data analysis was performed to understand the dataset and movie relationships.
+Exploratory data analysis was performed to better understand the dataset and movie relationships.
 
 Analysis includes:
 
@@ -96,20 +102,20 @@ EDA visualizations can be found in the notebooks folder.
 movie-recommendation-system-khatantamir
 
 app  
- └── app.py  
+ └── app.py
 
 data  
  └── raw  
      ├── movies.csv  
-     └── ratings.csv  
+     └── ratings.csv
 
-models  
+models
 
 notebooks  
- └── exploration.ipynb  
+ └── exploration.ipynb
 
 src  
- └── recommender.py  
+ └── recommender.py
 
 requirements.txt  
 README.md
@@ -160,7 +166,6 @@ This project demonstrates how businesses can:
 
 Possible improvements for this project include:
 
-- collaborative filtering
 - hybrid recommendation systems
 - deep learning recommendation models
 - real-time recommendation APIs
